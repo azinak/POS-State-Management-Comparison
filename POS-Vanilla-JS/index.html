@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام نقاط البيع البسيط</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- قسم المنتجات -->
+            <div class="col-md-8">
+                <h2 class="text-center my-3">قائمة المنتجات</h2>
+
+                <!-- فلاتر الفئات وأسعار البيع -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <select id="priceType" class="form-select">
+                            <option value="retail">سعر التجزئة</option>
+                            <option value="wholesale">سعر الجملة</option>
+                            <option value="distribution">سعر التوزيع</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" id="productSearch" class="form-control" placeholder="ابحث عن منتج...">
+                            <button class="btn btn-outline-secondary" type="button"><i
+                                    class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قائمة المنتجات -->
+                <div class="row" id="productsContainer">
+                    <!-- سيتم ملؤها بواسطة JavaScript -->
+                </div>
+            </div>
+
+            <!-- قسم السلة -->
+            <div class="col-md-4 bg-light">
+                <h2 class="text-center my-3">سلة المشتريات</h2>
+
+                <div class="cart-items" id="cartItems">
+                    <!-- سيتم ملؤها بواسطة JavaScript -->
+                </div>
+
+                <div class="summary mt-3 p-3 bg-white">
+                    <div class="d-flex justify-content-between">
+                        <span>المجموع الفرعي:</span>
+                        <span id="subtotal">0.00 ر.س</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>الخصم:</span>
+                        <div class="input-group input-group-sm" style="width: 120px;">
+                            <input type="number" id="discountInput" class="form-control" value="0" min="0" max="100">
+                            <span class="input-group-text">%</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between fw-bold">
+                        <span>الإجمالي:</span>
+                        <span id="total">0.00 ر.س</span>
+                    </div>
+
+                    <button class="btn btn-success w-100 mt-3" id="checkoutBtn">إتمام الشراء</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+
+</html>
